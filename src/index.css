@@ -4,6 +4,7 @@
   --text-color: rgba(255, 255, 255, 0.87);
   --bg-nav-color: rgba(0, 0, 0, 0.5);
   --bg-opacity-color: rgba(0, 0, 0, 0.6);
+  --bg-sidebar: #141414;
   /* Add more dark theme styles */
 }
 
@@ -13,6 +14,7 @@
   --text-color: #000;
   --bg-nav-color: rgba(190, 190, 190, 0.212);
   --bg-opacity-color: rgba(0, 0, 0, 0.1);
+  --bg-sidebar: #ccc;
   /* Add more light theme styles */
 }
 

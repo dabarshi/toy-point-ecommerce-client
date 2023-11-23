@@ -1,5 +1,6 @@
 nav {
     /* margin-inline: 2em; */
+    position: relative;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -13,7 +14,8 @@ nav ul {
     align-items: center;
 }
 
-nav .sidebar-icon-container {
+nav .sidebar-icon-container,
+.sidebar-close-container {
     display: flex;
     align-items: center;
     border: 1px solid var(--text-color);
@@ -22,23 +24,48 @@ nav .sidebar-icon-container {
     /* transition: border-color 0.25s; */
 }
 
-nav .sidebar-icon-container:hover {
+nav .sidebar-icon-container:hover,
+.sidebar-close-container:hover {
     /* border-color: var(--secondary-color); */
     background-color: var(--bg-opacity-color)
 }
 
-.sidebar-icon {
+.sidebar-icon,
+.sidebar-close-icon {
     margin: 0.4em;
     /* color: var(--text-color) */
 }
 
+.home-icon-container,
+.greetings-container {
+    display: flex;
+    align-items: center;
+    border-radius: 12%;
+    /* border: 1px solid var(--text-color); */
+    /* padding: .2em; */
+}
+
+.home-icon-container:hover {
+    border-bottom: 1px solid var(--text-color);
+}
+
+.home-icon {
+    margin: 0.4em;
+    color: var(--text-color);
+}
+
 .greetings {
     font-weight: 400;
+    margin-bottom: 0.2em;
+}
 
+.greetings-container:hover {
+    /* border-radius: 12%; */
+    border-bottom: 1px solid var(--text-color);
 }
 
 nav .logo {
-    height: 4em;
+    height: 4.5em;
     will-change: filter;
     transition: filter 300ms;
 }
@@ -50,19 +77,25 @@ nav .logo:hover {
 nav .dark-mode-toggle {
     border-radius: 50%;
     border: 1px solid transparent;
-    padding: 0.2em 0.4em;
+    /* margin: 0.1em; */
+    /* padding: 0.2em 0.4em; */
+    height: 1.9em;
+    aspect-ratio: 1;
     font-size: 1em;
     font-weight: 500;
     font-family: inherit;
     background-color: var(--primary-color);
     color: var(--color-white);
     cursor: pointer;
-    transition: border-color 0.25s;
+    transition: outline 300ms;
+    /* transition: border-color 0.25s; */
     /* justify-self: center; */
 }
 
 nav .dark-mode-toggle:hover {
-    border-color: var(--secondary-color);
+    /* border-color: var(--text-color); */
+    /* outline: 1px solid var(--secondary-color); */
+    outline: 1px auto var(--text-color);
 }
 
 nav .search-container {
@@ -101,31 +134,91 @@ nav .search-input {
     gap: 10px;
 }
 
+.user-img-container {
+    display: flex;
+    align-items: center;
+    border-radius: 50%;
+}
+
 .user-img {
-    height: 2em;
+    height: 1.9em;
     aspect-ratio: 1;
+    /* margin: 0.1em; */
     border-radius: 50%;
     border: 1px solid transparent;
     transition: outline 300ms;
 
 }
 
-.user-img:hover {
-    outline: 2px auto var(--secondary-color);
+
+.user-img-container:hover {
+    outline: 1px auto var(--text-color);
+}
+
+.dropdown-icon-container {
+    display: flex;
+    align-items: center;
+    border-radius: 50%;
 }
 
 .dropdown-icon {
-    width: 2em;
-    height: 2em;
+    width: 1.9em;
+    height: 1.9em;
 
     border-radius: 50%;
-    padding: .2em .4em;
+    /* margin: 0.1em; */
+    /* padding: .2em .4em; */
     border: 1px solid transparent;
     transition: background-color 300ms;
 }
 
-.dropdown-icon:hover {
+.dropdown-icon-container:hover {
     /* filter: drop-shadow(0 0 2em var(--primary-color)); */
     /* filter: drop-shadow(16px 16px 20px blue); */
     background-color: var(--bg-opacity-color);
+    outline: 1px auto var(--text-color);
+
+}
+
+
+/* sidebar style */
+.sidebar-container {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 25%;
+    background-color: var(--bg-sidebar);
+    padding: 2em 2em;
+}
+
+.display-hidden {
+    display: none;
+}
+
+.sidebar-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.sidebar-content {
+    margin-top: 2em;
+}
+
+.sidebar-content ul {
+    flex-direction: column;
+    align-items: start;
+    gap: 10px;
+}
+
+.sidebar-content ul a {
+    text-decoration: none;
+}
+
+.sidebar-content .home-icon-container {
+    display: flex;
+    gap: 20px;
+    color: var(--text-color);
+
 }

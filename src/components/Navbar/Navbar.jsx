@@ -1,12 +1,16 @@
 import './Navbar.css';
 import logo from '/logo.svg'
+import { useState } from 'react';
+import { randomHello } from '../../utilities/randomHello';
+
+import { FaHome } from "react-icons/fa";
 import { TiAdjustBrightness } from "react-icons/ti";
 import { CiDark } from "react-icons/ci";
 import { FaSearch } from "react-icons/fa";
 import { IoMdArrowDropdown } from "react-icons/io";
 import { GiHamburgerMenu } from "react-icons/gi";
-import { useState } from 'react';
-import { randomHello } from '../../utilities/randomHello';
+import { RxCross2 } from "react-icons/rx";
+import { Link } from 'react-router-dom';
 
 
 
@@ -14,8 +18,13 @@ import { randomHello } from '../../utilities/randomHello';
 
 const Navbar = () => {
 
-    const [theme, setTheme] = useState('light');
+    const [theme, setTheme] = useState('dark');
+    const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
+
+    const handleSidebarToggle = () => {
+        setIsSidebarOpen(!isSidebarOpen);
+    }
 
 
 
@@ -37,11 +46,22 @@ const Navbar = () => {
         <nav>
             <ul>
                 <li>
-                    <div className='sidebar-icon-container'>
+                    <div onClick={handleSidebarToggle} className='sidebar-icon-container'>
                         <GiHamburgerMenu className="sidebar-icon" />
                     </div>
                 </li>
-                <li className='greetings'>{randomHello()}</li>
+                <li>
+                    <Link to="/">
+                        <div className='home-icon-container'>
+                            <FaHome className='home-icon' />
+                        </div>
+                    </Link>
+                </li>
+                <li>
+                    <div className='greetings-container'>
+                        <p className='greetings'>{randomHello()}</p>
+                    </div>
+                </li>
             </ul>
             <img className='logo' src={logo} alt="" />
             <ul>
@@ -61,12 +81,51 @@ const Navbar = () => {
                 </li>
                 <li>
                     <div className='dropdown-container'>
-                        <img className='user-img' src={demoUserImgLink} alt="" />
-                        <IoMdArrowDropdown className='dropdown-icon' />
+                        <div className='user-img-container'>
+                            <img className='user-img' src={demoUserImgLink} alt="" />
+                        </div>
+                        <div className='dropdown-icon-container'>
+                            <IoMdArrowDropdown className='dropdown-icon' />
+                        </div>
                     </div>
                 </li>
             </ul>
-        </nav>
+            {/* side bar */}
+
+            <div className={isSidebarOpen ? 'sidebar-container' : 'display-hidden'}>
+                {/* <h1>This is sidebar</h1> */}
+                <div className='sidebar-top'>
+                    <ul>
+                        <li>
+                            <div className='sidebar-icon-container'>
+                                <GiHamburgerMenu className="sidebar-icon" />
+                            </div>
+                        </li>
+                        <li>
+                            <div className='greetings-container'>
+                                <p className='greetings'>{randomHello()}</p>
+                            </div>
+                        </li>
+                    </ul>
+                    <div onClick={handleSidebarToggle} className='sidebar-close-container'>
+                        <RxCross2 className='sidebar-close-icon' />
+                    </div>
+                </div>
+                <div className='sidebar-content'>
+                    <ul>
+                        <li>
+                            <Link to="/">
+                                <div className='home-icon-container'>
+                                    <FaHome className='home-icon' />
+                                    Home
+                                </div>
+                            </Link>
+                        </li>
+                        {/* <li>Home</li> */}
+                    </ul>
+                </div>
+            </div>
+        </nav >
     );
 };
 
