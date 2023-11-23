@@ -1,0 +1,131 @@
+nav {
+    /* margin-inline: 2em; */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--bg-nav-color);
+}
+
+nav ul {
+    display: flex;
+    gap: 20px;
+    list-style-type: none;
+    align-items: center;
+}
+
+nav .sidebar-icon-container {
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--text-color);
+    border-radius: 12%;
+    /* padding: 2px; */
+    /* transition: border-color 0.25s; */
+}
+
+nav .sidebar-icon-container:hover {
+    /* border-color: var(--secondary-color); */
+    background-color: var(--bg-opacity-color)
+}
+
+.sidebar-icon {
+    margin: 0.4em;
+    /* color: var(--text-color) */
+}
+
+.greetings {
+    font-weight: 400;
+
+}
+
+nav .logo {
+    height: 4em;
+    will-change: filter;
+    transition: filter 300ms;
+}
+
+nav .logo:hover {
+    filter: drop-shadow(0 0 2em var(--primary-color));
+}
+
+nav .dark-mode-toggle {
+    border-radius: 50%;
+    border: 1px solid transparent;
+    padding: 0.2em 0.4em;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: inherit;
+    background-color: var(--primary-color);
+    color: var(--color-white);
+    cursor: pointer;
+    transition: border-color 0.25s;
+    /* justify-self: center; */
+}
+
+nav .dark-mode-toggle:hover {
+    border-color: var(--secondary-color);
+}
+
+nav .search-container {
+    position: relative;
+}
+
+nav .search-input {
+    padding-right: 30px;
+    /* Adjust for icon spacing */
+    border: 1px solid var(--color-gray80);
+    border-radius: 4px;
+    padding: 8px 12px;
+    font-size: 16px;
+    width: 200px;
+    /* Adjust width as needed */
+}
+
+.search-input:focus,
+.search-input:focus-visible {
+    outline: 1px solid var(--secondary-color);
+}
+
+.search-icon {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    /* Adjust for icon position */
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #666;
+}
+
+.dropdown-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.user-img {
+    height: 2em;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: 1px solid transparent;
+    transition: outline 300ms;
+
+}
+
+.user-img:hover {
+    outline: 2px auto var(--secondary-color);
+}
+
+.dropdown-icon {
+    width: 2em;
+    height: 2em;
+
+    border-radius: 50%;
+    padding: .2em .4em;
+    border: 1px solid transparent;
+    transition: background-color 300ms;
+}
+
+.dropdown-icon:hover {
+    /* filter: drop-shadow(0 0 2em var(--primary-color)); */
+    /* filter: drop-shadow(16px 16px 20px blue); */
+    background-color: var(--bg-opacity-color);
+}
