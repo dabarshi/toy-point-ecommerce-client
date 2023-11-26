@@ -11,6 +11,7 @@ import { IoMdArrowDropdown } from "react-icons/io";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { RxCross2 } from "react-icons/rx";
 import { Link } from 'react-router-dom';
+import { AiOutlineShoppingCart } from "react-icons/ai";
 
 
 
@@ -56,6 +57,11 @@ const Navbar = () => {
                             <FaHome className='home-icon' />
                         </div>
                     </Link>
+                </li>
+                <li>
+                    <div className='shopping-cart-container'>
+                        <AiOutlineShoppingCart className='shopping-cart-icon' />
+                    </div>
                 </li>
                 <li>
                     <div className='greetings-container'>

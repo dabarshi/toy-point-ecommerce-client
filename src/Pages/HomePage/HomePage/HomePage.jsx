@@ -1,9 +1,10 @@
-
+import Carousel from "../../../components/Carousel/Carousel";
+import './HomePage.css'
 
 const HomePage = () => {
     return (
-        <div>
-            this is home page
+        <div className="home-container">
+            <Carousel />
         </div>
     );
 };
