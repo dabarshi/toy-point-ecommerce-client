@@ -1,0 +1,31 @@
+.sub-menu-item {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2px;
+    width: 100%;
+}
+
+.sub-menu-drop-down-container {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    display: none;
+    background: var(--bg-nav-color);
+    padding: 10px;
+}
+
+.sub-menu-drop-down-container ul {
+    list-style: none;
+}
+
+.sub-menu-drop-down-container ul a {
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+.sub-menu-item:hover .sub-menu-drop-down-container {
+    display: flex;
+}

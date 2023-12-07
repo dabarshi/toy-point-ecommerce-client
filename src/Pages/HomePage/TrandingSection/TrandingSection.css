@@ -1,0 +1,82 @@
+.tranding-section-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-block: 1em;
+    position: relative;
+}
+
+
+
+.tranding-title-container {
+    margin-block: 1em;
+}
+
+.tranding-toy-slider-container {
+    /* padding-inline: 2em; */
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+/* .tranding-toy-card {} */
+
+.tranding-toy-name-container {
+    /* align-items: center; */
+    margin-left: 1em;
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 10px;
+    /* justify-content: center; */
+}
+
+.tranding-toy-card p {
+    font-weight: 600;
+    font-size: 18px;
+    color: var(--primary-color);
+}
+
+.tranding-toy-card h6 {
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
+    font-size: 20px;
+}
+
+.tranding-img-container {
+    border: 1px solid var(--primary-color);
+    border-radius: 2px;
+    padding: 1em;
+
+}
+
+.tranding-img-container img {
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+    /* background: #000; */
+    border-radius: 8px;
+}
+
+/* .tranding-slider-btn-container {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    flex-direction: column;
+    height: 80%;
+    justify-content: center;
+    gap: 10px;
+}
+
+.tranding-slider-btn-container button {
+    height: 50%;
+    padding-inline: 1em;
+    border: 1px solid transparent;
+    background: rgb(41, 41, 41);
+    border-radius: 5px;
+    font-weight: bold;
+    color: #ffffff;
+    box-shadow: -2px 2px 2px black;
+}
+
+.tranding-slider-btn-container button:hover {
+    background: var(--primary-color);
+} */

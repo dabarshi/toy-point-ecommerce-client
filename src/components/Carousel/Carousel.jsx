@@ -2,17 +2,22 @@ import { useState, useEffect } from 'react';
 import './Carousel.css';
 
 
-import img1 from "../../assets/carousel/1.jpg"
-import img2 from "../../assets/carousel/2.png"
-import img3 from "../../assets/carousel/3.jpg"
-import img4 from "../../assets/carousel/4.jpg"
+// import img1 from "../../assets/carousel/1.jpg"
+// import img2 from "../../assets/carousel/2.png"
+// import img3 from "../../assets/carousel/3.jpg"
+// import img4 from "../../assets/carousel/4.jpg"
+import img1 from "../../assets/tranding/Ace2.png"
+import img2 from "../../assets/tranding/luffy2.png"
+import img3 from "../../assets/tranding/superman-henry-cavill.png"
+import img4 from "../../assets/tranding/zoro.png"
+
 
 
 import { FaAngleRight } from "react-icons/fa";
 import { FaAngleLeft } from "react-icons/fa";
 
 const Carousel = () => {
-    // const images = [img1, img2, img3, img4];
+
     const images = [
         {
             id: 1,
@@ -50,7 +55,7 @@ const Carousel = () => {
     useEffect(() => {
         const interval = setInterval(() => {
             setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-        }, 30000); // Change image every 30 seconds
+        }, 10000); // Change image every 30 seconds
 
         return () => clearInterval(interval);
     }, [images.length]);
@@ -65,7 +70,7 @@ const Carousel = () => {
                 {/* Left side text */}
                 <div className="text-section">
                     {/* Your five rows of text */}
-                    <p className='carousel-subtitle'>#{images[currentIndex].id} Spotlight</p>
+                    <p className='carousel-subtitle color-primary'>#{images[currentIndex].id} Spotlight</p>
                     <h1 className='carousel-title'>{images[currentIndex].title}</h1>
                     {
                         images[currentIndex].tags.map((tag, index) => <span key={index} className='carousel-tags'><small>#{tag}</small></span>)
@@ -78,7 +83,9 @@ const Carousel = () => {
                 {/* Right side images */}
                 <div className="image-section">
 
-                    <img src={images[currentIndex].imgUrl} alt={images[currentIndex].title} />
+                    <div>
+                        <img src={images[currentIndex].imgUrl} alt={images[currentIndex].title} />
+                    </div>
                     {/* Buttons to change images */}
                     <button onClick={() => changeImage((currentIndex + 1) % images.length)}>
                         <FaAngleRight />

@@ -1,0 +1,44 @@
+/* svg style */
+
+#nav-logo {
+    margin-block: 0.5em;
+    min-height: 2.5em;
+    /* border-radius: 50%; */
+    will-change: filter;
+    transition: filter 300ms;
+}
+
+.cls-1 {
+    font-size: 4.6px;
+    font-weight: bold;
+}
+
+.cls-1,
+.cls-2,
+.cls-3 {
+    fill: #06727f;
+}
+
+.cls-1,
+.cls-2 {
+    font-family: CalifornianFB-Reg, Californian FB;
+}
+
+.cls-2 {
+    font-size: 2.3px;
+    font-weight: bold;
+}
+
+#nav-logo #left-eye-group .cls-3,
+#nav-logo #right-eye-group .cls-3 {
+    fill: var(--logo-eye-color);
+
+}
+
+#nav-logo #left-eye-group {
+    animation: altRotate 5s ease-in-out 1s infinite;
+}
+
+#nav-logo #right-eye-group {
+    animation: rotate 5s ease-in-out 1s infinite;
+}

@@ -1,0 +1,79 @@
+.spin-logo-container {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    width: 100%;
+    max-width: 1200px;
+    color: var(--text-color-primary);
+    /* Adjust as needed */
+    margin: 0 auto;
+    padding-block: 1em;
+}
+
+
+/* .spin-logo-container .logo {
+    height: 8em;
+    aspect-ratio: 1;
+    background: #000;
+    border: 1px solid var(--primary-color);
+    border-radius: 50%;
+    padding: 1.5em;
+    will-change: filter;
+    transition: filter 300ms;
+} */
+
+.spin-logo-container #logo:hover {
+    filter: drop-shadow(0 0 2em #646cffaa);
+}
+
+.spin-logo-container h1 {
+    color: var(--title-color)
+}
+
+/* svg style */
+
+
+#logo {
+    padding: 25px;
+    min-height: 150px;
+    background-color: black;
+    border-radius: 50%;
+    transition: all ease-in-out;
+}
+
+.cls-1 {
+    font-size: 4.6px;
+}
+
+.cls-1,
+.cls-2,
+.cls-3 {
+    fill: #06727f;
+}
+
+.cls-1,
+.cls-2 {
+    font-family: CalifornianFB-Reg, Californian FB;
+}
+
+.cls-2 {
+    font-size: 2.3px;
+}
+
+#left-eye-group .cls-3 {
+    fill: rgb(100, 255, 255);
+
+}
+
+#right-eye-group .cls-3 {
+    fill: rgb(100, 255, 255);
+
+}
+
+#left-eye-group {
+    animation: altRotate 5s ease-in-out 1s infinite;
+}
+
+#right-eye-group {
+    animation: rotate 5s ease-in-out 1s infinite;
+}

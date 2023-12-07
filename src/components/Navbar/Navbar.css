@@ -1,10 +1,8 @@
 nav {
-    /* margin-inline: 2em; */
     position: relative;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: var(--bg-nav-color);
     z-index: 2;
 }
 
@@ -21,20 +19,17 @@ nav .sidebar-icon-container,
     align-items: center;
     border: 1px solid var(--text-color);
     border-radius: 12%;
-    /* padding: 2px; */
-    /* transition: border-color 0.25s; */
+
 }
 
 nav .sidebar-icon-container:hover,
 .sidebar-close-container:hover {
-    /* border-color: var(--secondary-color); */
     background-color: var(--bg-opacity-color)
 }
 
 .sidebar-icon,
 .sidebar-close-icon {
     margin: 0.4em;
-    /* color: var(--text-color) */
 }
 
 .home-icon-container,
@@ -42,14 +37,30 @@ nav .sidebar-icon-container:hover,
 .shopping-cart-container {
     display: flex;
     align-items: center;
-    border-radius: 12%;
-    /* border: 1px solid var(--text-color); */
-    /* padding: .2em; */
+    position: relative;
+
 }
 
-.home-icon-container:hover,
-.shopping-cart-container:hover {
-    border-bottom: 1px solid var(--text-color);
+.home-icon-container::after,
+.greetings-container::after,
+.shopping-cart-container::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 0%;
+    background-color: var(--text-color);
+    transition: all ease 1s;
+}
+
+
+
+.home-icon-container:hover::after,
+.shopping-cart-container:hover::after,
+.greetings-container:hover::after {
+    /* border-bottom: 1px solid var(--text-color); */
+    width: 100%;
 }
 
 .home-icon,
@@ -68,26 +79,10 @@ nav .sidebar-icon-container:hover,
     margin-bottom: 0.2em;
 }
 
-.greetings-container:hover {
-    /* border-radius: 12%; */
-    border-bottom: 1px solid var(--text-color);
-}
-
-nav .logo {
-    height: 4.5em;
-    will-change: filter;
-    transition: filter 300ms;
-}
-
-nav .logo:hover {
-    filter: drop-shadow(0 0 2em var(--primary-color));
-}
 
 nav .dark-mode-toggle {
     border-radius: 50%;
     border: 1px solid transparent;
-    /* margin: 0.1em; */
-    /* padding: 0.2em 0.4em; */
     height: 1.9em;
     aspect-ratio: 1;
     font-size: 1em;
@@ -96,15 +91,12 @@ nav .dark-mode-toggle {
     background-color: var(--primary-color);
     color: var(--color-white);
     cursor: pointer;
-    transition: outline 300ms;
-    /* transition: border-color 0.25s; */
-    /* justify-self: center; */
+    transition: all ease 1s;
 }
 
+
 nav .dark-mode-toggle:hover {
-    /* border-color: var(--text-color); */
-    /* outline: 1px solid var(--secondary-color); */
-    outline: 1px auto var(--text-color);
+    outline: 2px auto var(--text-color);
 }
 
 nav .search-container {
@@ -113,13 +105,11 @@ nav .search-container {
 
 nav .search-input {
     padding-right: 30px;
-    /* Adjust for icon spacing */
     border: 1px solid var(--color-gray80);
     border-radius: 4px;
     padding: 8px 12px;
     font-size: 16px;
     width: 200px;
-    /* Adjust width as needed */
 }
 
 .search-input:focus,
@@ -131,7 +121,6 @@ nav .search-input {
     position: absolute;
     top: 50%;
     right: 10px;
-    /* Adjust for icon position */
     transform: translateY(-50%);
     cursor: pointer;
     color: #666;
@@ -152,7 +141,6 @@ nav .search-input {
 .user-img {
     height: 1.9em;
     aspect-ratio: 1;
-    /* margin: 0.1em; */
     border-radius: 50%;
     border: 1px solid transparent;
     transition: outline 300ms;
@@ -173,20 +161,14 @@ nav .search-input {
 .dropdown-icon {
     width: 1.9em;
     height: 1.9em;
-
     border-radius: 50%;
-    /* margin: 0.1em; */
-    /* padding: .2em .4em; */
     border: 1px solid transparent;
     transition: background-color 300ms;
 }
 
 .dropdown-icon-container:hover {
-    /* filter: drop-shadow(0 0 2em var(--primary-color)); */
-    /* filter: drop-shadow(16px 16px 20px blue); */
     background-color: var(--bg-opacity-color);
     outline: 1px auto var(--text-color);
-
 }
 
 
@@ -236,8 +218,3 @@ nav .search-input {
 .sidebar-content .home-icon-container:hover {
     border: none;
 }
-
-/* .sidebar-content .home-icon:hover {
-    margin: .4em;
-    border: 1px solid var(--text-color);
-} */

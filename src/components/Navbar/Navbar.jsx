@@ -1,5 +1,5 @@
 import './Navbar.css';
-import logo from '/logo.svg'
+// import logo from '/logo.svg'
 import { useState } from 'react';
 import { randomHello } from '../../utilities/randomHello';
 
@@ -12,6 +12,9 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { RxCross2 } from "react-icons/rx";
 import { Link } from 'react-router-dom';
 import { AiOutlineShoppingCart } from "react-icons/ai";
+// import LogoSVGExperiment from '../LogoSVGExperiment/LogoSVGExperiment';
+
+import Logo from '../Logo/Logo';
 
 
 
@@ -69,7 +72,10 @@ const Navbar = () => {
                     </div>
                 </li>
             </ul>
-            <img className='logo' src={logo} alt="" />
+            {/* <LogoSVGExperiment /> */}
+
+            <Logo />
+            {/* <img className='logo' src={logo} alt="" /> */}
             <ul>
 
                 <li>
